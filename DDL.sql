@@ -50,3 +50,28 @@ CREATE TABLE email_auth_number (
     email VARCHAR(100) PRIMARY KEY,
     auth_number VARCHAR(4) NOT NULL
 );
+
+## 유저 테이블 생성
+CREATE TABLE user (
+    user_id VARCHAR(50) PRIMARY KEY,
+    user_password VARCHAR(255) NOT NULL,
+    user_email VARCHAR(100) NOT NULL UNIQUE,
+    user_role VARCHAR(15) NOT NULL DEFAULT('ROLE_USER')CHECK (user_role IN('ROLE_USER', 'ROLE_ADMIN')),
+    join_path VARCHAR(5) NOT NULL DEFAULT('HOME') CHECK(join_path IN('HOME', 'KAKAO', 'NAVER')),
+    CONSTRAINT user_email_fk
+    FOREIGN KEY (user_email) REFERENCES email_auth_number(email)
+);
+
+## Q&A 게시물 테이블 생성
+CREATE TABLE board (
+    reception_number INT PRIMARY KEY AUTO_INCREMENT,
+    status BOOLEAN NOT NULL DEFAULT(false),
+    title VARCHAR(100) NOT NULL,
+    contents TEXT NOT NULL,
+    writer_id VARCHAR(50) NOT NULL,
+    write_datetime DATETIME NOT NULL DEFAULT(now()),
+    view_count INT NOT NULL DEFAULT(0),
+    comment TEXT,
+    CONSTRAINT write_id_fk
+    Foreign Key (writer_id) REFERENCES user(user_id)
+);
