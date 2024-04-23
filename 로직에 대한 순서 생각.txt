@@ -1,0 +1,149 @@
+아이디 중복확인 로직
+
+- 클라이언트로부터 요청 (request body에 Data 포함되어 있음)
+
+1. request body의 데이터가 유효한 데이터인지 확인
+1.1 만약 유효하지 않은 데이터이면 'VF' 응답 처리
+
+(userId)
+
+2. 데이터베이스의 user 테이블에서 해당하는 userId를 가지고 있는 유저가 있는지 확인
+2.1 만약 가지고 있는 유저가 존재하면 'DI' 응답 처리
+2.2 만약 데이터 베이스 작업 중 에러가 발생하면 'DBE' 응답 처리
+
+3. 유효한 데이터이면서 데이터베이스에 중복된 아이디가 없고 데이터베이스 에러가 없을 때
+'SU' 응답 처리
+
+응답 : 성공
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{ 
+  "code": "SU",
+  "message": "Success.",
+  "accessToken": "${ACCESS_TOKEN}",
+  "expires": 3600
+}
+
+응답 : 실패 (필수 데이터 미입력)
+HTTP/1.1 400 Bad Request
+Content-Type: application/json;charset=UTF-8
+{
+  "code": "VF",
+  "message": "Varidation Failed."
+}
+
+응답 : 실패 (로그인 정보 불일치)
+HTTP/1.1 401 Unathorized
+Content-Type: application/json;charset=UTF-8
+{
+  "code": "SF",
+  "message": "Sign in Failed."
+}
+
+응답 : 실패 (토큰 생성 실패)
+HTTP/1.1 500 Internal Server Error
+Content-Type: application/json;charset=UTF-8
+{
+  "code": "TF",
+  "message": "Token creation Failed."
+}
+
+응답 : 실패 (데이터베이스 오류)
+HTTP/1.1 500 Internal Server Error
+Content-Type: application/json;charset=UTF-8
+{
+  "code": "DBE",
+  "message": "Database Error."
+}
+
+--------------------------------------------------------------------------------------------------
+이메일 로직
+
+- 클라이언트로부터 요청 (request body에 데이터가 포함되어 있음)
+
+1. request body의 데이터에 대해서 유효성 확인
+1.1 만약 유효하지 않은 데이터이면 'VF' 응답 처리
+
+(userEmail)
+
+2. 데이터베이스의 user 테이블에서 해당하는 userEmail를 가지고 있는 유저가 있는지 확인
+2.1 만약 가지고 있는 유저가 존재하면 'DE' 응답 처리
+2.2 만약 데이터 베이스 작업 중 에러가 발생하면 'DBE' 응답 처리
+
+3. 4자리의 인증 번호를 생성
+
+4. 데이터베이스의 email_auth_number 테이블에 userEmail과 생성한 4자리 인증 번호를 저장
+4.1 만약 데이터 베이스 작업 중 에러가 발생하면 'DBE' 응답 처리
+
+5. userEmail에 생성한 4자리의 인증 번호를 전송
+5.1  만약 이메일 전송 중에 에러가 발생하면 데이터베이스의 email_auth_number 테이블에 저장한 데이터를 삭제
+5.2 만약 이메일 전송 중에 에러가 발생하면 'MF' 응답 처리
+
+6. 'SU' 응답 처리
+
+응답 : 성공
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{ 
+  "code": "SU",
+  "message": "Success."
+}
+
+응답 : 실패 (필수 데이터 미입력)
+HTTP/1.1 400 Bad Request
+Content-Type: application/json;charset=UTF-8
+{
+  "code": "VF",
+  "message": "Varidation Failed."
+}
+
+응답 : 실패 (중복된 이메일)
+HTTP/1.1 400 Bad Request
+Content-Type: application/json;charset=UTF-8
+{
+  "code": "DE",
+  "message": "Duplicatied Email."
+}
+
+
+응답 : 실패 (이메일 전송 실패)
+HTTP/1.1 500 Internal Server Error
+Content-Type: application/json;charset=UTF-8
+{
+  "code": "MF",
+  "message": "Mail send Failed."
+}
+
+응답 : 실패 (데이터베이스 오류)
+HTTP/1.1 500 Internal Server Error
+Content-Type: application/json;charset=UTF-8
+{
+  "code": "DBE",
+  "message": "Database Error."
+}
+
+----------------------------------------------------------------------------------------------------
+이메일 인증 확인
+
+- 클라이언트로부터 요청 (request body에 데이터가 포함되어 있음)
+
+1. request body의 데이터에 대해서 유효성 확인
+1.1 만약 유효하지 않은 데이터이면 'VF' 응답 처리
+
+(userEmail, authNumber)
+
+2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
