@@ -9,19 +9,28 @@ import org.springframework.security.config.annotation.web.configurers.CsrfConfig
 import org.springframework.security.config.annotation.web.configurers.HttpBasicConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import com.estate.back.filter.JwtAuthenticationFilter;
+
+import lombok.RequiredArgsConstructor;
 
 // Spring Web Security 설정
 // - Basic 인증 미사용
 // - CSRF 정책 미사용
 // - Session 생성 정책 미사용
 // - CORS 정책 (모든 출처 - 모든 메서드 - 모든 패턴 허용)
+// - JwtAuthenticationFilter 추가 (UsernamePasswordAuthenticationFilter 이전에 추가)
 @Configurable
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class WebSecurityConfig {
+
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
     
     @Bean
     protected SecurityFilterChain configure(HttpSecurity httpSecurity)
@@ -32,8 +41,9 @@ public class WebSecurityConfig {
             .sessionManagement(sessionManagement -> sessionManagement
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
-            .cors(cors -> cors.configurationSource(corsConfigurationSource())
-            );
+            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+            .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+            
         return httpSecurity.build();
     }
 
