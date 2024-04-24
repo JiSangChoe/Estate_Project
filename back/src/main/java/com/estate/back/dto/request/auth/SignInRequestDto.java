@@ -5,12 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-// 아이디 중복확인 Request Body DTO
+// 로그인 Request Body DTO
 
 @Getter
 @Setter
 @NoArgsConstructor
-public class IdCheckRequestDto {
+public class SignInRequestDto {
     @NotBlank
     private String userId;
+    @NotBlank
+    private String userPassword;
 }

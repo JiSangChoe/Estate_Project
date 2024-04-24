@@ -1,9 +1,9 @@
 package com.estate.back.dto.response;
 
 // 200 성공 : SU / Success
-// 400 필수 데이터 미입력 : VF / Varidation Failed.
+// 400 필수 데이터 미입력 : VF / Validation Failed.
 // 400 중복된 아이디 : DI / Duplicated Id.
-// 400 중복된 이메일 : DE / Duplicated Emial.
+// 400 중복된 이메일 : DE / Duplicated Email.
 // 401 로그인 정보 불일치 : SF / Sign in Failed.
 // 401 인증실패 AF /Authentication Failed.
 // 500 토큰 생성 실패 : TF / Token creation Failed.
@@ -13,9 +13,9 @@ package com.estate.back.dto.response;
 // Response의 공통된 message 값
 public interface ResponseMessage {
     String SUCCESS = "Success";
-    String VALIDATION_FAIL = "Varidation Failed.";
+    String VALIDATION_FAIL = "Validation Failed.";
     String DUPLICATE_ID = "Duplicated Id";
-    String DUPLICATE_EMAIL = "Duplicated Emial.";
+    String DUPLICATE_EMAIL = "Duplicated Email.";
     String SIGN_IN_FAIL = "Sign in Failed.";
     String AUTHENTICATION_FAILED = "Authentication Failed.";
     String TOKEN_CREATION_FAILED = "Token creation Failed.";
