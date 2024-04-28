@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-// 회원가입 Request Body DTo
+// 회원가입 Request Body DTO
 
 @Getter
 @Setter
@@ -15,16 +15,12 @@ import lombok.Setter;
 public class SignUpRequestDto {
     @NotBlank
     private String userId;
-
     @NotNull
-    @Pattern(regexp = "^(?=.[a-zA-Z])(?=.[0-9]).{8,13}$")
-    private String userPassword; 
-
+    @Pattern(regexp="^(?=.*[a-zA-Z])(?=.*[0-9]).{8,13}$")
+    private String userPassword;
     @NotNull
-    @Pattern(regexp = "^[a-zA-Z0-9]*@([-.]?[a-zA-Z0-9])*\\.[a-zA-Z]{2,4}$")
+    @Pattern(regexp="^[a-zA-Z0-9]*@([-.]?[a-zA-Z0-9])*\\.[a-zA-Z]{2,4}$")
     private String userEmail;
-
     @NotBlank
-    @Pattern(regexp = "^[0-9]{4}$")
     private String authNumber;
 }
