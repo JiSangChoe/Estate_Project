@@ -1,5 +1,5 @@
 // description : 로그인 Request Body DTO
-export interface SignINRequestDto {
+export interface SignInRequestDto {
     userId: string;
     userPassword: string;
 }
