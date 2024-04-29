@@ -10,6 +10,7 @@ import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
+import com.estate.back.common.object.CustomOAuth2User;
 import com.estate.back.entity.EmailAuthNumberEntity;
 import com.estate.back.entity.UserEntity;
 import com.estate.back.repository.EmailAuthNumberRepository;
@@ -19,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class OAuth2UserSerivceImplementation extends DefaultOAuth2UserService {
+public class OAuth2UserServiceImplementation extends DefaultOAuth2UserService {
 
     private final UserRepository userRepository;
     private final EmailAuthNumberRepository emailAuthNumberRepository;
@@ -62,7 +63,7 @@ public class OAuth2UserSerivceImplementation extends DefaultOAuth2UserService {
             userRepository.save(userEntity);
         }
 
-        return oAuth2User;
+        return new CustomOAuth2User(userId, oAuth2User.getAttributes());
 
     }
 

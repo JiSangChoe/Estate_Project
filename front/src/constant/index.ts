@@ -1,4 +1,5 @@
 // description : Navigation URL PATH 
+export const SNS_PATH = '/sns/:accessToken/:expires';
 export const AUTH_PATH = '/authentication';
 export const SERVICE_PATH = '/service';
 export const LOCAL_PATH = 'local';
