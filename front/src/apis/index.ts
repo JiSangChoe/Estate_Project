@@ -1,65 +1,15 @@
-import axios from "axios";
-import {
-    EMAIL_AUTH_CHECK_REQUEST_URL,
-    EMAIL_AUTH_REQUEST_URL,
-    ID_CHECK_REQUEST_URL,
-    SIGN_IN_REUQEST_URL,
-    SIGN_UP_REQUEST_URL,
-} from "src/constant";
-import {
-    EmailAuthCheckRequestDto,
-    EmailAuthRequestDto,
-    IdCheckRequestDto,
-    SignInRequestDto,
-    SignUpRequestDto,
-} from "./dto/request";
-import { SignInResponseDto } from "./dto/response";
-import ResponseDto from "../response.dto";
-import { requestErrorHandler, requestHandler } from "..";
+import { AxiosResponse } from "axios";
+import ResponseDto from "./response.dto";
 
-//  function: 로그인 API 함수
-export const SignInRequest = async (requestBody: SignInRequestDto) => {
-    const result = await axios
-        .post(SIGN_IN_REUQEST_URL, requestBody)
-        .then(requestHandler<SignInResponseDto>)
-        .catch(requestErrorHandler);
-    return result;
+// function : Request 처리 함수
+export const requestHandler = <T>(response: AxiosResponse<T, any>) => {
+    const responseBody = response.data as T;
+    return responseBody;
 };
 
-// function: 아이디 중복 확인 API 함수
-export const IdCheckRequest = async (requestBody: IdCheckRequestDto) => {
-    const result = await axios
-        .post(ID_CHECK_REQUEST_URL, requestBody)
-        .then(requestHandler<ResponseDto>)
-        .catch(requestErrorHandler);
-    return result;
-};
-
-// function: 이메일 인증 API 함수
-export const emailAuthRequest = async (requestBody: EmailAuthRequestDto) => {
-    const result = await axios
-        .post(EMAIL_AUTH_REQUEST_URL, requestBody)
-        .then(requestHandler<ResponseDto>)
-        .catch(requestErrorHandler);
-    return result;
-};
-
-// function: 이메일 인증 확인 API 함수
-export const emailAuthCheckRequest = async (
-    requestBody: EmailAuthCheckRequestDto
-) => {
-    const result = await axios
-        .post(EMAIL_AUTH_CHECK_REQUEST_URL, requestBody)
-        .then(requestHandler<ResponseDto>)
-        .catch(requestErrorHandler);
-    return result;
-};
-
-// function: 회원가입 API 함수
-export const signUpRequest = async (requestBody: SignUpRequestDto) => {
-    const result = await axios
-        .post(SIGN_UP_REQUEST_URL, requestBody)
-        .then(requestHandler<ResponseDto>)
-        .catch(requestErrorHandler);
-    return result;
+// function : Request Error 처리 함수
+export const requestErrorHandler = (error: any) => {
+    const responseBody = error.response?.data;
+    if (!responseBody) return null; // undefined로 확인되지만 null로 바꾼것
+    return responseBody as ResponseDto;
 };

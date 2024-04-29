@@ -1,6 +1,6 @@
 import React from 'react';
-import './style.css'
+import './style.css';
 
 export default function Local() {
-    return <div>Local</div>;
+    return  <div>Local</div>
 }
