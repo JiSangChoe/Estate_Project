@@ -1,0 +1,22 @@
+request body (accessToken, expires)
+브라우저의 쿠키 스토리지의 accessToken 필드에 받아온 accessToken
+
+카카오
+client - 6502126d47725c05027e7daa7305a240
+secret - xWbV4OoNGdnrTb7A4I5aoGQ8oHk7IgAJ
+
+네이버
+client - vlGG7uDa96K1JNjpkk54
+secret - D0WDFJq7mF
+
+이걸로 들어가면 동의 항목뜸
+http://localhost:4000/api/v1/auth/oauth2/naver
+http://localhost:4000/api/v1/auth/oauth2/kakao
+
+
+http://localhost:4000/oauth2/callback/kakao
+http://localhost:4000/oauth2/callback/naver
+
+http://localhost:4000/oauth2/authorization/github
+http://localhost:4000/oauth2/authorization/naver
+http://localhost:4000/oauth2/authorization/kakao
