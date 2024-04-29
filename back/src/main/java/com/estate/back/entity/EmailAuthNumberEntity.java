@@ -8,9 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-// estate 데이터베이스의 email_auth_number 테이블과 매핑되는 Entity 클래스
-@Entity(name = "emailAuthNumber")
-@Table(name = "email_auth_number")
+// Estate 데이터베이스의 email_auth_number 테이블과 매핑되는 Entity 클래스
+@Entity(name="emailAuthNumber")
+@Table(name="email_auth_number")
 @Getter
 @Setter
 @NoArgsConstructor

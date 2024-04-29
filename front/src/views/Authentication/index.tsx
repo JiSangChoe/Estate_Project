@@ -1,4 +1,3 @@
-
 import React, { ChangeEvent, useState } from "react";
 import "./style.css";
 
@@ -6,7 +5,7 @@ import SignInBackground from 'src/assets/image/sign-in-background.png';
 import SignUpBackground from 'src/assets/image/sign-up-background.png';
 import InputBox from "src/components/Inputbox";
 import { EmailAuthCheckRequestDto, EmailAuthRequestDto, IdCheckRequestDto, SignInRequestDto, SignUpRequestDto } from "src/apis/auth/dto/request";
-import { IdCheckRequest, EmailAuthCheckRequest, EmailAuthRequest, signInRequest, SignUpRequest } from "src/apis/auth";
+import { IdCheckRequest, emailAuthCheckRequest, emailAuthRequest, signInRequest, signUpRequest } from "src/apis/auth";
 import ResponseDto from "src/apis/response.dto";
 import { SignInResponseDto } from "src/apis/auth/dto/response";
 import { useCookies } from "react-cookie";
@@ -310,7 +309,7 @@ function SignUp({ onLinkClickHandler }: Props) {
         }
 
         const requestBody: EmailAuthRequestDto = { userEmail: email };
-        EmailAuthRequest(requestBody).then(emailAuthResponse);
+        emailAuthRequest(requestBody).then(emailAuthResponse);
     };
 
     const onAuthNumberButtonClickHandler = () => {
@@ -321,7 +320,7 @@ function SignUp({ onLinkClickHandler }: Props) {
             userEmail: email,
             authNumber
         };
-        EmailAuthCheckRequest(requestBody).then(emailAuthCheckResponse);
+        emailAuthCheckRequest(requestBody).then(emailAuthCheckResponse);
     };
 
     const onSignUpButtonClickHandler = () => {
@@ -337,7 +336,7 @@ function SignUp({ onLinkClickHandler }: Props) {
             userEmail: email,
             authNumber
         }
-        SignUpRequest(requestBody).then(signUpResponse);
+        signUpRequest(requestBody).then(signUpResponse);
     };
 
     //                    render                    //
@@ -371,7 +370,7 @@ function SignUp({ onLinkClickHandler }: Props) {
 export default function Authentication() {
 
     //                    state                    //
-    const [page, setPage] = useState<AuthPage>('sign-in');
+    const [page, setPage] = useState<AuthPage>('sign-up');
 
     //                    event handler                    //
     const onLinkClickHandler = () => {

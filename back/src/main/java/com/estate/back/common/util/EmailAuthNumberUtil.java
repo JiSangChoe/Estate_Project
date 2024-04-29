@@ -21,9 +21,9 @@ public class EmailAuthNumberUtil {
         char[] authChar = new char[4];
         Random random = new Random();
 
-        for (int index = 0; index < authChar.length; index++) 
-        authChar[index] = (char)(random.nextInt(26) + 65);
-
+        for (int index = 0; index < authChar.length; index++)
+            authChar[index] = (char)(random.nextInt(26) + 65);
+        
         return new String(authChar);
     }
 
@@ -34,11 +34,11 @@ public class EmailAuthNumberUtil {
 
         for (int index = 0; index < authChar.length; index++) {
             boolean flag = random.nextBoolean();
-            if (flag) {authChar[index] = (char)(random.nextInt(10) + 48);
-            } else {
-                authChar[index] = (char)(random.nextInt(26) + 65);
-            }
+            if (flag) authChar[index] = (char)(random.nextInt(10) + 48);
+            else authChar[index] = (char)(random.nextInt(26) + 65);
         }
+        
         return new String(authChar);
     }
+
 }

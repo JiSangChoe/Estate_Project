@@ -1,6 +1,6 @@
 import React from 'react';
-import './style.css';
+import './style.css'
 
 export default function QnaWrite() {
-    return  <div>QnaWrite</div>
+    return <div>QnaWrite</div>;
 }
