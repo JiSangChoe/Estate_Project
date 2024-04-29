@@ -20,7 +20,7 @@ export function Sns () {
     const navigator = useNavigate();
 
     useEffect(() => {
-        if (accessToken || !expires) return;
+        if (!accessToken || !expires) return;
         const expiration = new Date(Date.now() + (Number(expires) * 1000));
         setCookie('accessToken', accessToken, { path: '/', expires: expiration });
 
@@ -389,7 +389,7 @@ function SignUp({ onLinkClickHandler }: Props) {
 export default function Authentication() {
 
     //                    state                    //
-    const [page, setPage] = useState<AuthPage>('sign-up');
+    const [page, setPage] = useState<AuthPage>('sign-in');
 
     //                    event handler                    //
     const onLinkClickHandler = () => {

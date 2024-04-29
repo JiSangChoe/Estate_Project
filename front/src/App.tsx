@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { Route, Routes, useNavigate } from 'react-router';
-import { AUTH_ABSOLUTE_PATH, AUTH_PATH, LOCAL_ABSOLUTE_PATH, LOCAL_PATH, QNA_DEATIL_PATH, QNA_PATH, QNA_UPDATE_PATH, QNA_WRITE_PATH, RATIO_PATH, SERVICE_PATH } from './constant';
+import { AUTH_ABSOLUTE_PATH, AUTH_PATH, LOCAL_ABSOLUTE_PATH, LOCAL_PATH, QNA_DEATIL_PATH, QNA_PATH, QNA_UPDATE_PATH, QNA_WRITE_PATH, RATIO_PATH, SERVICE_PATH, SNS_PATH } from './constant';
 import Authentication, { Sns } from './views/Authentication';
 import ServiceContainer from './layouts/ServiceContainer';
 import Local from './views/service/Local';
@@ -40,7 +40,7 @@ function App() {
   return (
     <Routes>
       <Route index element={<Index />} />
-      <Route path={'/sns/:accessToken/expires'} element={<Sns/>} />
+      <Route path={SNS_PATH} element={<Sns/>} />
       <Route path={AUTH_PATH} element={<Authentication />} />
       <Route path={SERVICE_PATH} element={<ServiceContainer />} >
         <Route path={LOCAL_PATH} element={<Local />} />
