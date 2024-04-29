@@ -13,6 +13,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class EmailAuthRequestDto {
     @NotNull
-    @Pattern(regexp = "^[a-zA-Z0-0]*@([-.]?[a-zA-Z0-9])*\\.[a-zA-Z]{2,4}$")
+    @Pattern(regexp="^[a-zA-Z0-9]*@([-.]?[a-zA-Z0-9])*\\.[a-zA-Z]{2,4}$")
     private String userEmail;
 }

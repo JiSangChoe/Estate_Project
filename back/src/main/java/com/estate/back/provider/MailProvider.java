@@ -1,4 +1,3 @@
-
 package com.estate.back.provider;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -14,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 // email 전송을 위한 제공자
 // - gmail smtp 서버를 사용
 
-// SMTP (Simple Mail Transfer Protocol) : 
+// SMTP (Simple Mail Transfer Protocol) :
 // - 인터넷을 통해서 이메일 메세지를 보내고 받는 데 사용되는 통신 프로토콜
 // - 메일 서버 및 기타 메시지 전송 에이전트(MTA)에서 메일 전송, 수신, 중계를 할 때 사용됨
 // - 기본 포트 : TCP 25
@@ -27,13 +26,13 @@ import lombok.RequiredArgsConstructor;
 @Component
 @RequiredArgsConstructor
 public class MailProvider {
-
+    
     @Value("${spring.mail.username}")
     private String from;
     private final JavaMailSender javaMailSender;
-
+    
     // 이메일 인증 메일 전송 메서드
-    public void mailAuthSend (String to, String authNumber) throws MessagingException {
+    public void mailSend (String to, String authNumber) throws MessagingException {
 
         // 전송할 메시지 객체 생성
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
@@ -50,14 +49,12 @@ public class MailProvider {
 
     }
 
-    private String getText (String authNumber) {
+    private String getText(String authNumber) {
         String text = 
             "<h2 style='text-align: center;'>estate 인증 번호</h2>" +
-            "<p>요청하신 email 인증 번호는 <strong style='color: red;'>" + 
-            authNumber +
+            "<p>요청하신 email 인증 번호는 <strong style='color: red;'>" +
+            authNumber + 
             "</strong>입니다.</p>";
         return text;
     }
-
-    
 }

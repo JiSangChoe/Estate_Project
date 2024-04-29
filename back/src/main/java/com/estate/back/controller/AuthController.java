@@ -34,15 +34,15 @@ public class AuthController {
         ResponseEntity<? super SignInResponseDto> response = authService.signIn(requestBody);
         return response;
     }
-    
+
     @PostMapping("/id-check")
     public ResponseEntity<ResponseDto> idCheck (
         @RequestBody @Valid IdCheckRequestDto requestBody
     ) {
-        ResponseEntity<ResponseDto> response = authService.idCheck(requestBody);
+        ResponseEntity<ResponseDto> response =  authService.idCheck(requestBody);
         return response;
     }
-
+    
     @PostMapping("/email-auth")
     public ResponseEntity<ResponseDto> emailAuth (
         @RequestBody @Valid EmailAuthRequestDto requestBody
@@ -66,5 +66,4 @@ public class AuthController {
         ResponseEntity<ResponseDto> response = authService.signUp(requestBody);
         return response;
     }
-
 }

@@ -9,10 +9,10 @@ import com.estate.back.dto.response.ResponseMessage;
 
 import lombok.Getter;
 
-// 로그인 Response Body DTO
+// 로그인 ResponseBody DTO
 @Getter
 public class SignInResponseDto extends ResponseDto {
-    
+
     private String accessToken;
     private int expires;
 
@@ -26,4 +26,5 @@ public class SignInResponseDto extends ResponseDto {
         SignInResponseDto responseBody = new SignInResponseDto(accessToken);
         return ResponseEntity.status(HttpStatus.OK).body(responseBody);
     }
+
 }

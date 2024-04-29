@@ -12,19 +12,18 @@ import com.estate.back.dto.response.ResponseDto;
 
 @RestControllerAdvice
 public class ValidationExceptionHandler {
-
+    
     // RequestBody의 데이터 유효성 검사 중 발생하는 예외 핸들링
     // - MethodArgumentNotValidException : 유효하지 않은 데이터
     // - HttpMessageNotReadableException : RequestBody가 없어서 유효성 검사를 못할 때
+
     @ExceptionHandler({
         MethodArgumentNotValidException.class,
         HttpMessageNotReadableException.class
     })
-    public ResponseEntity<ResponseDto> validationExceptionHandler(
-        Exception exception
-    ) {
+    public ResponseEntity<ResponseDto> validationExceptionHandler(Exception exception) {
         exception.printStackTrace();
         return ResponseDto.validationFailed();
     }
-    
+
 }

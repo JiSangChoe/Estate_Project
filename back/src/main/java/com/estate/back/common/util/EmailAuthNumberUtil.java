@@ -12,7 +12,7 @@ public class EmailAuthNumberUtil {
         String authNumber = "";
         Random random = new Random();
 
-        for (int index = 0; index <4; index++) authNumber += random.nextInt(10);
+        for (int index = 0; index < 4; index++) authNumber += random.nextInt(10);
         return authNumber;
     }
 
@@ -22,25 +22,23 @@ public class EmailAuthNumberUtil {
         Random random = new Random();
 
         for (int index = 0; index < authChar.length; index++) 
-            authChar[index] = (char)(random.nextInt(26) + 65);
+        authChar[index] = (char)(random.nextInt(26) + 65);
 
         return new String(authChar);
     }
 
-    // - A~Z, 0~9의 4자리 임의의 문자열
+    // -A~Z, 0~9의 4자리 임의의 문자열
     public static String createCodeNumber() {
         char[] authChar = new char[4];
         Random random = new Random();
 
         for (int index = 0; index < authChar.length; index++) {
             boolean flag = random.nextBoolean();
-            if (flag) authChar[index] = (char)(random.nextInt(10) + 48);
-            else authChar[index] = (char)(random.nextInt(26) + 65);
+            if (flag) {authChar[index] = (char)(random.nextInt(10) + 48);
+            } else {
+                authChar[index] = (char)(random.nextInt(26) + 65);
+            }
         }
-            
-
         return new String(authChar);
-
     }
-
 }
