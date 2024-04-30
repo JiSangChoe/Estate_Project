@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { Route, Routes, useNavigate } from 'react-router';
-import { AUTH_ABSOLUTE_PATH, AUTH_PATH, LOCAL_ABSOLUTE_PATH, LOCAL_PATH, QNA_DEATIL_PATH, QNA_PATH, QNA_UPDATE_PATH, QNA_WRITE_PATH, RATIO_PATH, SERVICE_PATH, SNS_PATH } from './constant';
+import { AUTH_ABSOLUTE_PATH, AUTH_PATH, LOCAL_ABSOLUTE_PATH, LOCAL_PATH, QNA_DETAIL_PATH, QNA_PATH, QNA_UPDATE_PATH, QNA_WRITE_PATH, RATIO_PATH, SERVICE_PATH, SNS_PATH } from './constant';
 import Authentication, { Sns } from './views/Authentication';
 import ServiceContainer from './layouts/ServiceContainer';
 import Local from './views/service/Local';
@@ -48,7 +48,7 @@ function App() {
         <Route path={QNA_PATH} >
           <Route index element={<QnaList />} />
           <Route path={QNA_WRITE_PATH} element={<QnaWrite />} />
-          <Route path={QNA_DEATIL_PATH} element={<QnaDetail />} />
+          <Route path={QNA_DETAIL_PATH} element={<QnaDetail />} />
           <Route path={QNA_UPDATE_PATH} element={<QnaUpdate />} />
         </Route>
       </Route>
