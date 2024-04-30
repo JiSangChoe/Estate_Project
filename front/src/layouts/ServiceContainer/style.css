@@ -1,0 +1,112 @@
+#wrapper {
+    display: grid;
+    grid-template: 
+        "logo topbar" 77px
+        "sidenav main" minmax(944px, auto)
+        / 257px minmax(1182px, 1fr);
+}
+
+.logo-container {
+    
+    /*위에서 지정한 이름으로 설정*/
+    grid-area: logo;
+    
+    /*센터 맞추기*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*보더 아래 1px 선 긋기*/
+    border-bottom: 1px solid rgba(233, 236, 239, 1);
+
+    /*폰트 스타일*/
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 173%;
+    color: rgba(64, 64, 64, 1);
+}
+
+.top-bar-container {
+    
+    /*위에서 지정한 이름으로 설정*/
+    grid-area: topbar;
+
+    /*위치 지정*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /*padding 값 주기 */
+    padding: 0 24px;
+
+    /*테두리 선긋기*/
+    border-left: 1px solid rgba(233, 236, 239, 1);
+    border-bottom: 1px solid rgba(233, 236, 239, 1);
+}
+
+.top-bar-title {
+    /*폰트 스타일*/
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    color: rgba(64, 64, 64, 1);
+}
+
+.side-navigation-container {
+    grid-area: sidenav;
+    padding: 16px 12px;
+
+    /*디스플레이 세로정렬 및 갭 설정*/
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.side-navigation-item {
+    border-radius: 6px;
+    padding: 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    color: rgba(138, 146, 166, 1);
+}
+
+.side-navigation-item:hover {
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.side-navigation-item.active {
+    background-color: rgba(58, 87, 232, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.side-navigation-icon {
+    width: 24px;
+    height: 24px;
+    background-size: 100% 100%;
+}
+
+.side-navigation-icon.chart {
+    background-image: url(../../assets/image/chart-icon.png);
+}
+
+.side-navigation-icon.pie {
+    background-image: url(../../assets/image/pie-icon.png);
+}
+
+.side-navigation-icon.edit {
+    background-image: url(../../assets/image/edit-icon.png);
+}
+
+.side-navigation-title {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
