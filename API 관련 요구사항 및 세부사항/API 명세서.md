@@ -522,10 +522,10 @@ Content-Type: application/json;charset=UTF-8
   
 ##### 설명
 
-클라이언트로부터 Request Header의 Authorization 필드로 Bearer 토큰을 포함하여 요청을 받으면 해당 토큰의 작성자(subject)에 해당하는 사용자 정보를 반환,  
+클라이언트로부터 Request Header의 Authorization 필드로 Bearer 토큰을 포함하여 요청을 받으면 해당 토큰의 작성자(subject)에 해당하는 사용자 정보를 반환합니다. 성공시에는 사용자의 아이디와 권한을 반환합니다. 인증 실패 및 데이터베이스 에러가 발생할 수 있습니다.  
 
-- method : **POST**  
-- URL : **/sign-in**  
+- method : **GET**  
+- URL : **/**  
 
 ##### Request
 
@@ -533,20 +533,13 @@ Content-Type: application/json;charset=UTF-8
 
 | name | description | required |
 |---|:---:|:---:|
-
-###### Request Body
-
-| name | type | description | required |
-|---|:---:|:---:|:---:|
-| userId | String | 사용자의 아이디 | O |
-| userPassword | String | 사용자의 비밀번호 | O |
+| Authorization | 인증에 사용될 Bearer 토큰 | O |
 
 ###### Example
 
 ```bash
-curl -v -X POST "http://localhost:4000/api/v1/auth/sign-in" \
- -d "userId=service123" \
- -d "userPassword=P!ssw0rd"
+curl -v -X GET "http://localhost:4000/api/v1/user/" \
+ -H "Authorization: Bearer {JWT}" 
 ```
 
 ##### Response
@@ -563,8 +556,8 @@ curl -v -X POST "http://localhost:4000/api/v1/auth/sign-in" \
 |---|:---:|:---:|:---:|
 | code | String | 사용자의 아이디 | O |
 | message | String | 사용자의 비밀번호 | O |
-| accessToken | String | 사용자의 아이디 | O |
-| expires | int | 사용자의 비밀번호 | O |
+| userId | String | 사용자의 아이디 | O |
+| usrRole | String | 사용자의 권한 | O |
 
 ###### Example
 
@@ -575,38 +568,28 @@ Content-Type: application/json;charset=UTF-8
 {
   "code": "SU",
   "message": "Success.",
-  "accessToken": "${ACCESS_TOKEN}",
-  "expires": 3600
+  "userId": "${userId}",
+  "userRole": "${userRole}"
 }
 ```
 
-**응답 : 실패 (데이터 유효성 검사 실패)**
+**응답 : 실패 (인가 실패)**
 ```bash
-HTTP/1.1 400 Bad Request
+HTTP/1.1 403 Forbidden
 Content-Type: application/json;charset=UTF-8
 {
-  "code": "VF",
-  "message": "Varidation Failed."
+  "code": "AF",
+  "message": "Authorization Failed."
 }
 ```
 
-**응답 : 실패 (로그인 정보 불일치)**
+**응답 : 실패 (인증 실패)**
 ```bash
 HTTP/1.1 401 Unauthorized
 Content-Type: application/json;charset=UTF-8
 {
-  "code": "SF",
-  "message": "Sign in Failed."
-}
-```
-
-**응답 : 실패 (토큰 생성 실패)**
-```bash
-HTTP/1.1 500 Internal Server Error
-Content-Type: application/json;charset=UTF-8
-{
-  "code": "TF",
-  "message": "Token creation Failed."
+  "code": "AF",
+  "message": "Authentication Failed."
 }
 ```
 
