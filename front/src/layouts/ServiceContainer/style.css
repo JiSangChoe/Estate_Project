@@ -45,6 +45,21 @@
     color: rgba(64, 64, 64, 1);
 }
 
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-bar-role {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+
+    color: rgba(138,146,165,1);
+}
+
 .side-navigation-container {
     grid-area: sidenav;
     padding: 16px 12px;
@@ -82,15 +97,27 @@
 }
 
 .side-navigation-icon.chart {
-    background-image: url(../../assets/image/chart-icon.png);
+    background-image: url('../../assets/image/chart-fill-icon.png');
+}
+
+.active > .side-navigation-icon.chart {
+    background-image: url('../../assets/image/chart-fill-icon.png');
 }
 
 .side-navigation-icon.pie {
-    background-image: url(../../assets/image/pie-icon.png);
+    background-image: url('../../assets/image/pie-icon.png');
+}
+
+.active > .side-navigation-icon.pie {
+    background-image: url('../../assets/image/pie-fill-icon.png');
 }
 
 .side-navigation-icon.edit {
-    background-image: url(../../assets/image/edit-icon.png);
+    background-image: url('../../assets/image/edit-icon.png');
+}
+
+.active > .side-navigation-icon.edit {
+    background-image: url('../../assets/image/edit-fill-icon.png');
 }
 
 
