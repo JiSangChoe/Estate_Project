@@ -6,13 +6,59 @@
 
 .qna-write-top{
     display: flex;
+    align-items: center;
     gap: 12px;
 }
 
 .qna-write-title-box {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+
     border: 1px solid rgba(238, 238,238, 1);
     border-radius: 6px;
     padding: 8px 16px;
 
     background-color: rgba(255,255,255,1);
+}
+
+.qna-write-title-input {
+    border: none;
+    outline: none;
+    background: none;
+
+    width: 100%;
+
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+
+    color: rgba(64,64,64,1)
+}
+
+.qna-write-contents-box {
+    border: 1px solid rgba(238, 238,238, 1);
+    border-radius: 6px;
+    padding: 12px 16px;
+
+    min-height: 248px;
+
+    background-color: rgba(255,255,255,1);
+}
+
+.qna-write-contents-textarea {
+    border: none;
+    outline: none;
+    background: none;
+    resize: none;
+
+    width: 100%;
+
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+
+    color: rgba(64,64,64,1)
 }
