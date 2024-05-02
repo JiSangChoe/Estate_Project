@@ -1,0 +1,58 @@
+0. 클라이언트로부터 Authorization 헤더와 Request Body를 포함하여 요청
+
+0.1 권한이 없는 사용자이면 'AF' 응답 처리 (403)
+0.2 유효하지 않은 데이터이면 'VF' 응답 처리
+
+(title, contents, userId)
+
+1. 데이터베이스의 user 테이블에서 해당 유저가 존재하는지 확인
+1.1 존재하지 않는 유저라면 'AF' 응답 처리 (401)
+1.2 데이터베이스 오류가 발생하면 'DBE' 응답 처리 
+
+2. Board 데이블에 데이터 삽입
+2.1 데이터베이스 오류가 발생하면 'DBE' 응답 처리
+
+3. 'SU' 응답 처리
+--------------------------------------------------------------------------------------------------------------
+로그인
+post localhost:4000/api/v1/auth/sign-in
+
+{
+    "userId" : "admin",
+    "userPassword" : "wltkd123"
+}
+
+user토큰
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaGx3bHRrZDEyMyIsImlhdCI6MTcxNDYxNjEwMSwiZXhwIjoxNzE0NjUyMTAxfQ.d8D_1MBe5BvMrJ_MEZdzFlfipgyuE-wshe8IuXiN6mM
+
+admin 토큰
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcxNDYxNjc4MCwiZXhwIjoxNzE0NjUyNzgwfQ.FGW4tUyZx-ltMtSOym4JSscavizGHtXOL2i_pb5kAPI
+
+게시물 작성
+localhost:4000/api/v1/auth/board/
+{
+  "title" : "테스트"
+  "contents" : "헤으응"
+}
+
+1. 인증 없이 -> "AF"
+2. 유효하지 않은 데이터 -> "VF"
+3. "SU"
+
+
+http://localhost:3000/service/qna/write
+
+--------------------------------------------------------------------------------------------------------
+데이터베이스에서 전체 리스트 조회 -> List<BoardEntity> -> List<BoardListItem>
+
+SELECT *
+FROM board
+ORDER BY reception_number DESC;
+
+쿼리 메서드
+findByOrderByReceptionNumberDesc();
+
+GET http://localhost:4000/api/v1/board/list
+
+ + user 토큰 ==> 게시물 목록
+
