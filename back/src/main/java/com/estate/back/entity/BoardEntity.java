@@ -29,7 +29,7 @@ public class BoardEntity {
     private Integer receptionNumber;
     private Boolean status;
     private String title;
-    private String content;
+    private String contents;
     private String writerId;
     private String writeDatetime;
     private Integer viewCount;
@@ -43,7 +43,7 @@ public class BoardEntity {
 
         this.status = false;
         this.title = dto.getTitle();
-        this.content = dto.getContents();
+        this.contents = dto.getContents();
         this.writerId = userId;
         this.writeDatetime = writeDatetime;
         this.viewCount = 0;

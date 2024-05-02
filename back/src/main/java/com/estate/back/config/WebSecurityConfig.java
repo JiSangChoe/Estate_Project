@@ -58,6 +58,7 @@ public class WebSecurityConfig {
             // 인가 작업에 대한 처리
             .authorizeHttpRequests(request -> request
                 .requestMatchers("/", "/api/v1/auth/**", "/oauth2/callback/*").permitAll()
+                .requestMatchers("/api/v1/board/").hasRole("USER")
                 .anyRequest().authenticated()
             )
             .oauth2Login(oauth2 -> oauth2
