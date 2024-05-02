@@ -6,6 +6,7 @@ import { QNA_LIST_ABSOLUTE_PATH } from 'src/constant';
 import { postBoardRequest } from 'src/apis/board';
 import { PostBoardRequestDto } from 'src/apis/board/dto/request';
 import { useCookies } from 'react-cookie';
+import ResponseDto from 'src/apis/response.dto';
 
 //                    component                    //
 export default function QnaWrite() {
@@ -18,6 +19,23 @@ export default function QnaWrite() {
 
     //                    function                    //
     const navigator = useNavigate();
+
+    const postBoardResponse = (result: ResponseDto | null) => {
+
+        const message = 
+            !result ? '서버에 문제가 있습니다.' :
+            result.code === 'VF' ? '제목과 내용을 모두 입력해주세요.' :
+            result.code === 'AF' ? '권한이 없습니다.' :
+            result.code === 'DBE' ? '서버에 문제가 있습니다.' : '';
+        
+        if (!result || result.code !== 'SU') {
+            alert(message);
+            return;
+        }
+
+        navigator(QNA_LIST_ABSOLUTE_PATH);
+
+    };
 
     //                    event handler                    //
     const onTitleChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
@@ -41,7 +59,7 @@ export default function QnaWrite() {
 
         const requestBody: PostBoardRequestDto = { title, contents };
 
-        postBoardRequest(requestBody, cookies.accessToken).then();
+        postBoardRequest(requestBody, cookies.accessToken).then(postBoardResponse);
     };
 
     //                    effect                    //
