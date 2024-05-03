@@ -1,4 +1,6 @@
 #qna-list-wrapper {
+    margin: 0 auto;
+    max-width: 1136px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -73,6 +75,11 @@
     text-align: center;
 
     color: rgba(64, 64, 64, 1);
+}
+
+.qna-list-table-tr:hover {
+    cursor: pointer;
+    background-color: rgba(238,238,238,0.2);
 }
 
 .qna-list-table-reception-number {
