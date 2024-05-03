@@ -40,3 +40,7 @@ export const POST_BOARD_REQUEST_URL = `${SERVER_BOARD_MODULE_URL}/`;
 export const GET_BOARD_LIST_URL = `${SERVER_BOARD_MODULE_URL}/list`;
 
 export const GET_SEARCH_BOARD_LIST_URL = (searchWord: string) => `${SERVER_BOARD_MODULE_URL}/list/${searchWord}`;
+
+// description: 게시물 상수
+export const COUNT_PER_PAGE = 10;
+export const COUNT_PER_SECTION = 10;
