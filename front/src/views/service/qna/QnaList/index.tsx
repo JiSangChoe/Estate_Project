@@ -46,33 +46,39 @@ export default function QnaList() {
             </div>
             <div className='qna-list-table'>
                 <div className='qna-list-table-th'>
-                    <div>접수번호</div>
-                    <div>상태</div>
-                    <div>제목</div>
-                    <div>작성자</div>
-                    <div>작성일</div>
-                    <div>조회수</div>
+                    <div className='qna-list-table-reception-number'>접수번호</div>
+                    <div className='qna-list-table-status'>상태</div>
+                    <div className='qna-list-table-title'>제목</div>
+                    <div className='qna-list-table-writer-id'>작성자</div>
+                    <div className='qna-list-table-write-date'>작성일</div>
+                    <div className='qna-list-table-viewcount'>조회수</div>
                 </div>
-                <div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div className='qna-list-table-tr'>
+                <div className='qna-list-table-reception-number'>접수번호</div>
+                    <div className='qna-list-table-status'>
+                        <div className='primary-badge'>접수</div>
+                    </div>
+                    <div className='qna-list-table-title' style={{ textAlign: 'left' }}>제목</div>
+                    <div className='qna-list-table-writer-id'>작성자</div>
+                    <div className='qna-list-table-write-date'>작성일</div>
+                    <div className='qna-list-table-viewcount'>조회수</div>
                 </div>
             </div>
-            <div>
-                <div>
-                    <div></div>
-                    <div>1</div>
-                    <div></div>
-                </div>
-                <div>
-                    <div>
-                        <input />
+            <div className='qna-list-bottom'>
+                <div></div>
+                <div className='qna-list-pagination'>
+                    <div className='qna-list-page-left' ></div>
+                    <div className='qna-list-page-box'>
+                        <div className='qna-list-page-active'>1</div>
+                        <div className='qna-list-page'>1</div>
                     </div>
-                    <div>검색</div>
+                    <div className='qna-list-page-right' ></div>
+                </div>
+                <div className='qna-list-search-box'>
+                    <div className='qna-list-search-input-box'>
+                        <input className='qna-list-search-input'/>
+                    </div>
+                    <div className='disable-button'>검색</div>
                 </div>
             </div>
         </div>

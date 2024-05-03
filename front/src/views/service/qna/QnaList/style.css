@@ -36,6 +36,10 @@
 }
 
 .qna-list-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     border: 1px solid rgba(238,238,238,1);
     border-radius: 8px;
     
@@ -48,4 +52,142 @@
     gap: 95px;
     padding: 15px 24px;
 
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+
+    color: rgba(64, 64, 64, 1);
+}
+
+.qna-list-table-tr {
+    display: flex;
+    align-items: center;
+    gap: 95px;
+
+    border-top: 1px solid rgba(238,238,238,1);
+    padding: 15px 24px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+
+    color: rgba(64, 64, 64, 1);
+}
+
+.qna-list-table-reception-number {
+    width: 56px;
+}
+
+.qna-list-table-status {
+    width: 45px;
+}
+
+.qna-list-table-title {
+    width: 349px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.qna-list-table-writer-id {
+    width: 67px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.qna-list-table-write-date {
+    width: 54px;
+}
+
+.qna-list-table-viewcount {
+    width: 42px;
+}
+
+.qna-list-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.qna-list-pagination {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.qna-list-page-left {
+    width: 40px;
+    height: 40px;
+
+    background-image: url('../../../../assets/image/page-left.png');
+    background-size: 100% 100%;
+
+    cursor: pointer;
+}
+
+.qna-list-page-right {
+    width: 40px;
+    height: 40px;
+
+    background-image: url('../../../../assets/image/page-right.png');
+    background-size: 100% 100%;
+
+    cursor: pointer;
+}
+
+.qna-list-page-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.qna-list-page {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+
+    color: rgba(138,146,166,1);
+
+    cursor: pointer;
+}
+
+.qna-list-page-active {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+
+    color: rgba(64,64,64,1);
+
+    cursor: default;
+}
+
+.qna-list-search-box{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.qna-list-search-input-box {
+    border: 1px solid rgba(238,238,238,1);
+    border-radius: 6px;
+    padding: 8px 16px;
+    width: 168px;
+
+    background-color: rgba(255,255,255,1);
+}
+
+.qna-list-search-input {
+    border: none;
+    outline: none;
+    background: none;
+
+    width: 100%;
+
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+
+    color: rgba(64, 64, 64, 1);
 }
