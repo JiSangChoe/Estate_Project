@@ -5,7 +5,6 @@ import java.util.Date;
 import com.estate.back.entity.BoardEntity;
 import java.util.List;
 
-import org.springframework.security.access.method.P;
 
 import java.util.ArrayList;
 

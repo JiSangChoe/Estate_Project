@@ -1,9 +1,9 @@
 package com.estate.back.dto.response;
 
 // 200 성공 : SU / Success
-// 400 필수 데이터 미입력 : VF / Varidation Failed.
+// 400 필수 데이터 미입력 : VF / Validation Failed.
 // 400 중복된 아이디 : DI / Duplicated Id.
-// 400 중복된 이메일 : DE / Duplicated Emial.
+// 400 중복된 이메일 : DE / Duplicated Email.
 // 401 로그인 정보 불일치 : SF / Sign in Failed.
 // 401 인증실패 AF /Authentication Failed.
 // 500 토큰 생성 실패 : TF / Token creation Failed.

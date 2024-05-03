@@ -2,5 +2,6 @@
     "java.configuration.updateBuildConfiguration": "interactive",
     "cSpell.words": [
         "Configurer"
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "disabled"
 }
