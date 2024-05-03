@@ -15,8 +15,8 @@ export const LOCAL_ABSOLUTE_PATH = `${SERVICE_PATH}/${LOCAL_PATH}`;
 export const RATIO_ABSOLUTE_PATH = `${SERVICE_PATH}/${RATIO_PATH}`;
 export const QNA_LIST_ABSOLUTE_PATH = `${SERVICE_PATH}/${QNA_PATH}`;
 export const QNA_WRITE_ABSOLUTE_PATH = `${SERVICE_PATH}/${QNA_PATH}/${QNA_WRITE_PATH}`;
-export const QNA_DETAIL_ABSOLUTE_PATH = (receptionNumber: string) => `${SERVICE_PATH}/${QNA_PATH}/${receptionNumber}`;
-export const QNA_UPDATE_ABSOLUTE_PATH = (receptionNumber: string) => `${SERVICE_PATH}/${QNA_PATH}/update/${receptionNumber}`;
+export const QNA_DETAIL_ABSOLUTE_PATH = (receptionNumber: number) => `${SERVICE_PATH}/${QNA_PATH}/${receptionNumber}`;
+export const QNA_UPDATE_ABSOLUTE_PATH = (receptionNumber: string | number) => `${SERVICE_PATH}/${QNA_PATH}/update/${receptionNumber}`;
 
 // description: API URL PATH 
 export const SERVER_DOMAIN_URL = 'http://localhost:4000';

@@ -1,0 +1,60 @@
+{
+  "userId" : "chlwltkd123",
+  "userPassword" : "wltkd123"
+}
+
+user 토큰
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaGx3bHRrZDEyMyIsImlhdCI6MTcxNDY5NjQ3MywiZXhwIjoxNzE0NzMyNDczfQ.9Jxm-w72Xd4lcpuRpSIOHmut6dOveeMbzHXXS0D7JMo
+
+게시물 검색 관련
+SELECT * FROM board 
+WHERE title LIKE '%searchWord%'
+ORDER BY reception_number DESC;
+
+findByTitleContainsOrderByReceptionNumberDesc();
+
+GET http://localhost:4000/api/v1/board/list/헤으응
+
+------------------------------------------------------------------------------------------------------------
+결과 전체 게시물 리스트
+
+한 페이지당 10개씩
+한 섹션당 10개
+
+총 게시물 수 : 316
+총 페이지 수 : 32 ((총게시물수 - 1) // 한페이지당게시물수10) + 1 
+총 섹션 수 : 4 ((총페이지수 -  1) // 한셕션당페이지수) +1
+
+페이지 - 시작 인덱스 ~ 종료 인덱스
+1 - 0 ~ 9 (페이지 -1) * 10 ~ [페이지 * 10 - 1 | 맨마지막 인덱스 ]
+2 - 10 ~ 19
+3 - 20 ~ 29
+...
+31 - 300 ~ 309
+32 - 310 ~ 315
+
+섹션 - 시작 페이지 ~ 종료 페이지
+1 - 1 ~ 10 (섹션 * 섹션당페이지수 - (섹션당페이지수 -1)) ~ [(섹션 * 섹션당 페이지수) | 마지막페이지]
+2 - 11 ~ 20 
+3 - 21 ~ 30
+4 - 31 ~ 32
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
