@@ -1,0 +1,51 @@
+#qna-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.qna-lis-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.qna-list-size-text {
+    font-size: 16px;
+    font-weight: 400;
+
+    color: rgba(138,146,166,1);
+}
+
+.qna-list-size-text .emphasis {
+    color: rgba(64, 64, 64, 1);
+}
+
+.qna-list-top-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.qna-list-top-admin-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    
+    color: rgba(64, 64, 64, 1);
+}
+
+.qna-list-table {
+    border: 1px solid rgba(238,238,238,1);
+    border-radius: 8px;
+    
+    background-color: rgba(255,255,255,1);
+}
+
+.qna-list-table-th {
+    display: flex;
+    align-items: center;
+    gap: 95px;
+    padding: 15px 24px;
+
+}

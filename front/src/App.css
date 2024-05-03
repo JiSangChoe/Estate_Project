@@ -76,6 +76,24 @@
     opacity: 0.9;
 }
 
+.toggle {
+    width: 35px;
+    height: 20px;
+    background-image: url('./assets/image/toggle.png');
+    background-size: 100% 100%;
+    
+    cursor: pointer;
+}
+
+.toggle-active {
+    width: 35px;
+    height: 20px;
+    background-image: url('./assets/image/toggle-active.png');
+    background-size: 100% 100%;
+
+    cursor: pointer;
+}
+
 .text-link {
     font-size: 16px;
     font-style: normal;
