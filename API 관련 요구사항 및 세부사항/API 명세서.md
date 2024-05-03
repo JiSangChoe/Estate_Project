@@ -84,7 +84,7 @@ HTTP/1.1 400 Bad Request
 Content-Type: application/json;charset=UTF-8
 {
   "code": "VF",
-  "message": "Varidation Failed."
+  "message": "Validation Failed."
 }
 ```
 
@@ -182,7 +182,7 @@ HTTP/1.1 400 Bad Request
 Content-Type: application/json;charset=UTF-8
 {
   "code": "VF",
-  "message": "Varidation Failed."
+  "message": "Validation Failed."
 }
 ```
 
@@ -192,7 +192,7 @@ HTTP/1.1 400 Bad Request
 Content-Type: application/json;charset=UTF-8
 {
   "code": "DI",
-  "message": "Duplicatied Id."
+  "message": "Duplicated Id."
 }
 ```
 
@@ -270,7 +270,7 @@ HTTP/1.1 400 Bad Request
 Content-Type: application/json;charset=UTF-8
 {
   "code": "VF",
-  "message": "Varidation Failed."
+  "message": "Validation Failed."
 }
 ```
 
@@ -280,7 +280,7 @@ HTTP/1.1 400 Bad Request
 Content-Type: application/json;charset=UTF-8
 {
   "code": "DE",
-  "message": "Duplicatied Email."
+  "message": "Duplicated Email."
 }
 ```
 
@@ -370,7 +370,7 @@ HTTP/1.1 400 Bad Request
 Content-Type: application/json;charset=UTF-8
 {
   "code": "VF",
-  "message": "Varidation Failed."
+  "message": "Validation Failed."
 }
 ```
 
@@ -464,7 +464,7 @@ HTTP/1.1 400 Bad Request
 Content-Type: application/json;charset=UTF-8
 {
   "code": "VF",
-  "message": "Varidation Failed."
+  "message": "Validation Failed."
 }
 ```
 
@@ -474,7 +474,7 @@ HTTP/1.1 400 Bad Request
 Content-Type: application/json;charset=UTF-8
 {
   "code": "DI",
-  "message": "Duplicatied Id."
+  "message": "Duplicated Id."
 }
 ```
 
@@ -484,7 +484,7 @@ HTTP/1.1 400 Bad Request
 Content-Type: application/json;charset=UTF-8
 {
   "code": "DE",
-  "message": "Duplicatied Email."
+  "message": "Duplicated Email."
 }
 ```
 
