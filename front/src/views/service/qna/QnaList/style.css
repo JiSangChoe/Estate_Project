@@ -6,7 +6,7 @@
     gap: 16px;
 }
 
-.qna-lis-top {
+.qna-list-top {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -16,7 +16,7 @@
     font-size: 16px;
     font-weight: 400;
 
-    color: rgba(138,146,166,1);
+    color: rgba(138, 146, 166, 1);
 }
 
 .qna-list-size-text .emphasis {
@@ -33,7 +33,7 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
-    
+
     color: rgba(64, 64, 64, 1);
 }
 
@@ -42,10 +42,10 @@
     flex-direction: column;
     align-items: center;
 
-    border: 1px solid rgba(238,238,238,1);
+    border: 1px solid rgba(238, 238, 238, 1);
     border-radius: 8px;
-    
-    background-color: rgba(255,255,255,1);
+
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .qna-list-table-th {
@@ -66,7 +66,7 @@
     align-items: center;
     gap: 95px;
 
-    border-top: 1px solid rgba(238,238,238,1);
+    border-top: 1px solid rgba(238, 238, 238, 1);
     padding: 15px 24px;
 
     font-size: 14px;
@@ -79,7 +79,7 @@
 
 .qna-list-table-tr:hover {
     cursor: pointer;
-    background-color: rgba(238,238,238,0.2);
+    background-color: rgba(238, 238, 238, 0.2);
 }
 
 .qna-list-table-reception-number {
@@ -154,7 +154,7 @@
     font-weight: 400;
     line-height: 20px;
 
-    color: rgba(138,146,166,1);
+    color: rgba(138, 146, 166, 1);
 
     cursor: pointer;
 }
@@ -164,24 +164,24 @@
     font-weight: 400;
     line-height: 20px;
 
-    color: rgba(64,64,64,1);
+    color: rgba(64, 64, 64, 1);
 
     cursor: default;
 }
 
-.qna-list-search-box{
+.qna-list-search-box {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
 .qna-list-search-input-box {
-    border: 1px solid rgba(238,238,238,1);
+    border: 1px solid rgba(238, 238, 238, 1);
     border-radius: 6px;
     padding: 8px 16px;
     width: 168px;
 
-    background-color: rgba(255,255,255,1);
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .qna-list-search-input {
