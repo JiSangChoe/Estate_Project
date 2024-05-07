@@ -21,3 +21,47 @@ PATCH http://localhost:4000/api/v1/board/1/increase-view-count
 
 GET http://localhost:4000/api/v1/board/1 + 토큰 
  => 조회수 증가
+
+------------------------------------------------------------------------------------------
+back 모듈 만드는 순서
+DTO  response -> DTO reqeuset -> service -> implementation -> config에 SecurityFilterChain에다가 인가에 대한 처리해야함
+
+
+POST http://localhost:4000/api/v1/board/10/comment
++ 
+
+USER 토큰
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaGx3bHRrZDEyMyIsImlhdCI6MTcxNTA0MjEzMiwiZXhwIjoxNzE1MDc4MTMyfQ.Yvr3zDD76utU0BJfynqt5Z2TnCTpu55apMK35-2xfrg
+
+ADMIN 토큰
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcxNTA2ODExMiwiZXhwIjoxNzE1MTA0MTEyfQ.PKMvvTqjIBufs-XAQ9lCd5te4OC49lEcQou3A-YxO28
+
+- USER / ADMIN
+= USER -> AF
+
+= request body 잘못 -> VF
+
+= 존재하지 않는 게시물 번호 -> NB
+
+= 이미 작성된 답글 -> WC
+
+= SU
+
+------------------------------------------------------------------------------------------------------------
+front
+
+onCommentChangeHandler
+
+1. 답글 textareat 사이즈 조정
+2. 답글 버튼 사이즈 변경 안되게
+3. 목록 보기, 수정, 삭제 버튼
+4. list 화면 미완료 보기
+5.띄어쓰기
+
+
+
+
+
+
+
+
