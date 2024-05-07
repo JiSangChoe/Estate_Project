@@ -1,7 +1,8 @@
 {
     "java.configuration.updateBuildConfiguration": "interactive",
     "cSpell.words": [
-        "Configurer"
+        "Configurer",
+        "Datetime"
     ],
     "java.compile.nullAnalysis.mode": "disabled"
 }
