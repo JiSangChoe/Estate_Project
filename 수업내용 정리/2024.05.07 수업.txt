@@ -1,0 +1,23 @@
+- 유효성 검사
+
+(receptionNumber)
+
+- 데이터베이스의 Board 테이블에서 receptionNumber에 해당하는 레코드 조회
+SELECT *
+FROM board
+WHERE reception_number = :receptionNumber;
+
+
+GET http://localhost:4000/api/v1/board/1 + 토큰
+ = AF, NB 확인
+ = 정상적으로 반환 확인
+ 게시물 뜨고 1대신 없는 게시물 하면 NB, 조회수 0
+
+PATCH http://localhost:4000/api/v1/board/1/increase-view-count
+
+ = AF, NB 확인
+ = 정상적으로 반환 확인
+ => SU가 떠야함
+
+GET http://localhost:4000/api/v1/board/1 + 토큰 
+ => 조회수 증가
