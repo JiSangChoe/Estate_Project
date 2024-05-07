@@ -86,13 +86,14 @@ export default function QnaDetail() {
     }, []);
     
     //                    render                    //
+    const coveredWriterId = writerId !== '' && (writerId[0] + '*'.repeat(writerId.length - 1));
     return (
         <div id='qna-detail-wrapper'>
             <div className='qna-detail-main-box'>
                 <div className='qna-detail-top-box'>
                     <div className='qna-detail-title-box'>{title}</div>
                     <div className='qna-detail-info-box'>
-                        <div className='qna-detail-info'>작성자 {writerId}</div>
+                        <div className='qna-detail-info'>작성자 {coveredWriterId}</div>
                         <div className='qna-detail-info-divider'>{'\|'}</div>
                         <div className='qna-detail-info'>작성일 {writeDate}</div>
                         <div className='qna-detail-info-divider'>{'\|'}</div>
@@ -111,7 +112,7 @@ export default function QnaDetail() {
             }
             {status &&
             <div className='qna-detail-comment-box'>
-                <div className='primary-bedge'>답변</div>
+                <div className='primary-badge'>답변</div>
                 <div className='qna-detail-comment'>{comment}</div>
             </div>
             }
