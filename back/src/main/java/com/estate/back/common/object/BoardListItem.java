@@ -2,6 +2,8 @@ package com.estate.back.common.object;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import com.estate.back.common.util.ChangeDateFormatUtil;
 import com.estate.back.entity.BoardEntity;
 import java.util.List;
 
@@ -21,11 +23,8 @@ public class BoardListItem {
 
     private BoardListItem(BoardEntity boardEntity) throws Exception {
 
-        // 문자열을 데이터타입으로 바꾸고 "yy.MM.dd"형태로 데이터타입을 문자열로 바꾸는 코드
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date datetime = simpleDateFormat.parse(boardEntity.getWriteDatetime());
-        simpleDateFormat = new SimpleDateFormat("yy.MM.dd");
-        String writeDatetime = simpleDateFormat.format(datetime);
+        // 문자열을 데이터타입으로 바꾸고 "yy.MM.dd"형태로 데이터타입을 문자열로 바꾸는 코드 -> common-util로가서 메서드로 만듬
+        String writeDatetime = ChangeDateFormatUtil.changeYYMMDD(boardEntity.getWriteDatetime());
 
         // 첫글자만 보이고 나머지는 *로 표시하기 위한 코드
         String writerId = boardEntity.getWriterId();
