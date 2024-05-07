@@ -11,7 +11,7 @@ export default function QnaDetail() {
                 <div className='qna-detail-top-box'>
                     <div className='qna-detail-title-box'>제목입니다.</div>
                     <div className='qna-detail-info-box'>
-                        <div className='qna-detail-info'>작성자 k***</div>
+                        <div className='qna-detail-info'>작성자 k******</div>
                         <div className='qna-detail-info-divider'>{'\|'}</div>
                         <div className='qna-detail-info'>작성일 2024.05.07</div>
                         <div className='qna-detail-info-divider'>{'\|'}</div>

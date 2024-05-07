@@ -1,0 +1,90 @@
+#qna-detail-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.qna-detail-main-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    border: 1px solid rgba(238,238,238,1);
+    border-radius: 8px;
+    padding: 24px;
+
+    background-color: rgba(255,255,255,1);
+}
+
+.qna-detail-top-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.qna-detail-title-box{
+    font-size: 24px;
+    font-weight: 700;
+
+    color: rgba(64,64,64,1)
+}
+
+.qna-detail-info-box {
+    display: flex;
+    gap: 8px;
+}
+
+.qna-detail-info {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+
+    color: rgba(138,146,166,1)
+}
+
+.qna-detail-info-divider {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+
+    color: rgba(238,238,238,1)
+}
+
+.qna-detail-contents-box {
+    min-height: 207px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+
+    color: rgba(64,64,64,1);
+}
+
+.qna-detail-button-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.qna-detail-owner-button-box {
+    display: flex;
+    gap: 12px;
+}
+
+.qna-detail-comment-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    border: 1px solid rgba(238,238,238,1);
+    border-radius: 8px;
+    padding: 24px;
+
+    background-color: rgba(255,255,255,1);
+}
+
+.qna-detail-comment {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+
+    color: rgba(64,64,64,1);
+}
