@@ -1,5 +1,5 @@
 
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, KeyboardEvent, useEffect, useState } from 'react';
 import './style.css'
 import { useUserStore } from 'src/stores';
 import { useNavigate } from 'react-router';
@@ -160,6 +160,11 @@ export default function QnaList() {
         setCurrentPage(page);
     };
 
+    const onSearchWordKeydownHandler = (event: KeyboardEvent<HTMLInputElement>) => {
+        if (event.key !== 'Enter') return;
+        onSearchButtonClickHandler();
+    }
+
     const onPreSectionClickHandler = () => {
         if (currentSection <= 1) return;
         setCurrentSection(currentSection - 1);
@@ -243,7 +248,7 @@ export default function QnaList() {
                 </div>
                 <div className='qna-list-search-box'>
                     <div className='qna-list-search-input-box'>
-                        <input className='qna-list-search-input' placeholder='검색어를 입력하세요.' value={searchWord} onChange={onSearchWordChangeHandler} />
+                        <input className='qna-list-search-input' placeholder='검색어를 입력하세요.' value={searchWord} onChange={onSearchWordChangeHandler} onKeyDown={onSearchWordKeydownHandler}/>
                     </div>
                     <div className={searchButtonClass} onClick={onSearchButtonClickHandler}>검색</div>
                 </div>
