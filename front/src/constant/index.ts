@@ -45,7 +45,8 @@ export const GET_SEARCH_BOARD_LIST_URL = (searchWord: string) => `${SERVER_BOARD
 
 export const GET_BOARD_URL = (receptionNumber: number | string) => `${SERVER_BOARD_MODULE_URL}/${receptionNumber}`;
 export const INCREASE_VIEW_COUNT_URL = (receptionNumber: number | string) => `${SERVER_BOARD_MODULE_URL}/${receptionNumber}/increase-view-count`;
+export const DELETE_BOARD_URL = (receptionNumber: number | string) => `${SERVER_BOARD_MODULE_URL}/${receptionNumber}`;
 
 // description: 게시물 상수
-export const COUNT_PER_PAGE = 1;
-export const COUNT_PER_SECTION = 2;
+export const COUNT_PER_PAGE = 10;
+export const COUNT_PER_SECTION = 10;
