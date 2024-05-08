@@ -30,13 +30,13 @@ export const getBoardListRequest = async (accessToken: string) => {
 };
 
 // function: Q&A 검색 리스트 불러오기 API 함수
-export const getSearchBoardListRequest = async (searchWord:string, accessToken: string) => {
-    const result = await axios.get(GET_SEARCH_BOARD_LIST_URL(searchWord), bearerAuthorization(accessToken))
+export const getSearchBoardListRequest = async (word: string, accessToken: string) => {
+    const config = {...bearerAuthorization(accessToken), params: { word }}
+    const result = await axios.get(GET_SEARCH_BOARD_LIST_URL, config)
         .then(requestHandler<GetSearchBoardListResponseDto>)
         .catch(requestErrorHandler);
     return result;
 };
-
 // function: Q&A 게시물 불러오기 API 함수
 export const getBoardRequest = async (receptionNumber: number | string, accessToken: string) => {
     const result = await axios.get(GET_BOARD_URL(receptionNumber), bearerAuthorization(accessToken))
