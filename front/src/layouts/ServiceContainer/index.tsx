@@ -53,13 +53,19 @@ function SideNavigation ({ path }: Props) {
     const ratioClass = `side-navigation-item${path === '비율 계산' ? ' active' : ''}`;
     const qnaClass = `side-navigation-item${path === 'Q&A 게시판' ? ' active' : ''}`;
 
+    //                    state                    //
+    const { pathname } = useLocation();
+
     //                    function                    //
     const navigator = useNavigate();
 
     //                    event handler                    //
     const onLocalClickHandler = () => navigator(LOCAL_ABSOLUTE_PATH);
     const onRatioClickHandler = () => navigator(RATIO_ABSOLUTE_PATH);
-    const onQnaClickHandler = () => navigator(QNA_LIST_ABSOLUTE_PATH);
+    const onQnaClickHandler = () => {
+        if (pathname === QNA_LIST_ABSOLUTE_PATH) window.location.reload();
+        else navigator(QNA_LIST_ABSOLUTE_PATH);
+    };
 
     //                    render                    //
     return (

@@ -187,7 +187,7 @@ export default function QnaList() {
     //                    effect                    //
     useEffect(() => {
         if (!cookies.accessToken) return;
-        getBoardListRequest(cookies.accessToken).then(getBoardListResponse);
+        getSearchBoardListRequest(searchWord,cookies.accessToken).then(getSearchBoardListResponse);
     }, [isToggleOn]);
 
     useEffect(() => {

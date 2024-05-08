@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, KeyboardEvent } from "react";
 import './style.css';
 
 export interface InputBoxProps {
@@ -12,9 +12,10 @@ export interface InputBoxProps {
     onButtonClickHandler?: () => void;
     message?: string;
     error?: boolean;
+    onKeydownHandler?: (event: KeyboardEvent<HTMLInputElement>) => void;
 }
 
-export default function InputBox({ label, type, value, placeholder, onChangeHandler, buttonTitle, buttonStatus, onButtonClickHandler, message, error }: InputBoxProps) {
+export default function InputBox({ label, type, value, placeholder, onChangeHandler, buttonTitle, buttonStatus, onButtonClickHandler, message, error, onKeydownHandler }: InputBoxProps) {
 
     const buttonClass = buttonStatus ? 'input-primary-button' : 'input-disable-button';
     const messageClass = 'input-message ' + (error ? 'error' : 'primary');
@@ -29,6 +30,7 @@ export default function InputBox({ label, type, value, placeholder, onChangeHand
                     value={value}
                     placeholder={placeholder}
                     onChange={onChangeHandler}
+                    onKeyDown={onKeydownHandler}
                 />
                 { buttonTitle && 
                 <div className={buttonClass} onClick={onButtonClickHandler}>
