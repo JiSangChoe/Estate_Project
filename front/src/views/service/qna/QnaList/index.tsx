@@ -138,8 +138,8 @@ export default function QnaList() {
         const { boardList } = result as GetSearchBoardListResponseDto;
         changeBoardList(boardList);
         
-        setCurrentPage(1);
-        setCurrentSection(1);
+        setCurrentPage(!boardList.length ? 0 : 1);
+        setCurrentSection(!boardList.length ? 0 : 1);
 
     };
 
@@ -159,7 +159,7 @@ export default function QnaList() {
     };
 
     const onPreSectionClickHandler = () => {
-        if (currentSection === 1) return;
+        if (currentSection <= 1) return;
         setCurrentSection(currentSection - 1);
         setCurrentPage((currentSection - 1) * COUNT_PER_SECTION);
     };
