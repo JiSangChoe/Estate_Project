@@ -20,6 +20,7 @@ public interface ResponseMessage {
     String WRITTEN_COMMENT = "Written Comment";
     String SIGN_IN_FAIL = "Sign in Failed.";
     String AUTHENTICATION_FAILED = "Authentication Failed.";
+    String AUTHORIZATION_FAILED = "Authorization Failed.";
     String TOKEN_CREATION_FAILED = "Token creation Failed.";
     String MAIL_SEND_FAILED = "Mail send Failed.";
     String DATABASE_ERROR = "Database Error.";

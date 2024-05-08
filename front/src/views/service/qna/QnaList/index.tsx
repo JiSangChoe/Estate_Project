@@ -84,6 +84,8 @@ export default function QnaList() {
     };
 
     const changeBoardList = (boardList: BoardListItem[]) => {
+        // 배열에서 filter함수를 호출하면 요소에서 원하는 요소를 선택해서 새로운 배열을 만듬
+        if (isToggleOn) boardList = boardList.filter(board => !board.status);
         setBoardList(boardList);
 
         const totalLength = boardList.length;
@@ -114,6 +116,9 @@ export default function QnaList() {
 
         const { boardList } = result as GetBoardListResponseDto;
         changeBoardList(boardList);
+
+        setCurrentPage(1);
+        setCurrentSection(1);
     };
 
     const getSearchBoardListResponse = (result: GetSearchBoardListResponseDto | ResponseDto | null) => {
@@ -132,6 +137,7 @@ export default function QnaList() {
 
         const { boardList } = result as GetSearchBoardListResponseDto;
         changeBoardList(boardList);
+        
         setCurrentPage(1);
         setCurrentSection(1);
 
@@ -180,7 +186,7 @@ export default function QnaList() {
     useEffect(() => {
         if (!cookies.accessToken) return;
         getBoardListRequest(cookies.accessToken).then(getBoardListResponse);
-    }, []);
+    }, [isToggleOn]);
 
     useEffect(() => {
         if (!boardList.length) return;
