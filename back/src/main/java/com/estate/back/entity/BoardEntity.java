@@ -5,6 +5,7 @@ import java.time.Instant;
 import java.util.Date;
 
 import com.estate.back.dto.request.board.PostBoardRequestDto;
+import com.estate.back.dto.request.board.PutBoardRequestDto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -51,5 +52,10 @@ public class BoardEntity {
 
     public void increaseViewCount() {
         this.viewCount++;
+    }
+
+    public void update(PutBoardRequestDto dto) {
+        this.title = dto.getTitle();
+        this.contents =dto.getContents();
     }
 }

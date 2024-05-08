@@ -21,4 +21,7 @@ front
 
 http://localhost:3000/service/qna/update/6
 
+게시물 수정
+http://localhost:4000/api/v1/board/{receptionNumber}
+
 

@@ -9,7 +9,7 @@ import ResponseDto from 'src/apis/response.dto';
 import { QNA_LIST_ABSOLUTE_PATH } from 'src/constant';
 
 //                    component                    //
-export default function QnaList() {
+export default function QnaUpdate() {
 
     //                    state                    //
     const contentsRef = useRef<HTMLTextAreaElement | null>(null);
@@ -32,13 +32,19 @@ export default function QnaList() {
             result.code === 'DBE' ? '서버에 문제가 있습니다.' : '';
 
         if (!result || result.code !== 'SU') {
+            alert(message);
             navigator(QNA_LIST_ABSOLUTE_PATH);
             return;
         }
 
-        const { writerId, title, contents } = result as GetBoardResponseDto;
+        const { writerId, title, contents, status } = result as GetBoardResponseDto;
         if (writerId !== loginUserId) {
             alert('권한이 없습니다.');
+            navigator(QNA_LIST_ABSOLUTE_PATH);
+            return;
+        }
+        if (status) {
+            alert('답변이 완료된 게시물입니다.');
             navigator(QNA_LIST_ABSOLUTE_PATH);
             return;
         }
@@ -73,8 +79,11 @@ export default function QnaList() {
     };
 
     //                    effect                    //
+    let effectFlag = false;
     useEffect(() => {
         if (!receptionNumber || cookies.accessToken) return;
+        if (effectFlag) return;
+        effectFlag = true;
         getBoardRequest(receptionNumber, cookies.accessToken).then(getBoardResponse);
     }, [])    
     
