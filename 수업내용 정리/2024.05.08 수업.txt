@@ -51,7 +51,7 @@ board/list/. , board/list/#
 그래서 아래 형식으로 요청을 하게끔 함
 ==> board/list/search?word=.
 
-
+ http://localhost:4000/api/v1/board/list/search?word=.
 
 
 
