@@ -21,7 +21,34 @@ front
 
 http://localhost:3000/service/qna/update/6
 
+----------------------------------------------------------------------------------------------------------
 게시물 수정
-http://localhost:4000/api/v1/board/{receptionNumber}
+PUT http://localhost:4000/api/v1/board/{receptionNumber}
+
+USER 토큰
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaGx3bHRrZDEyMyIsImlhdCI6MTcxNTEyODQxMSwiZXhwIjoxNzE1MTY0NDExfQ.TZaxdrq0uuns-bJFqHghBh0cDWS5ha8pQ-zcJqgDMp4
+
+ADMIN 토큰
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcxNTEyODM0NywiZXhwIjoxNzE1MTY0MzQ3fQ.rfqe7b5XqT0wKxOVebdF_eaETmYNfnRs0xS_tk4wpN4
+
+인증 없이 => AF
+request body => VF
+존재하지 않는 접수 번호 => NB
+작성자가 아닐때 => AF
+답글이 달린 상태 => WC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
