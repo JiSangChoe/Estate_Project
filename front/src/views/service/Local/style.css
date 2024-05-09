@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    margin: 0 auto;
+    width: 1182px;
 }
 
 .local-top {
@@ -58,5 +61,5 @@
 }
 
 .local-card-chart-box {
-    height: 238px;
+    width: 100%;
 }

@@ -2,4 +2,5 @@ front에서 npm install chart.js 설치
 
 	npm install react-chartjs-2 설치 <-- 이게 차트 관련 라이브러리
 
-import {  } from 'chart.js' -> 해야 차트 사용 가능
+import { 사용할 차트 종류 } from 'react-chartjs-2';-> 해야 차트 사용 가능
+import { 사용할 차트 속성 } from 'chart.js'

@@ -131,5 +131,6 @@
 .main-container {
     grid-area: main;
     padding: 24px;
+    min-width: 1182px;
     background-color: rgba(238, 238, 238, 0.5);
 }
