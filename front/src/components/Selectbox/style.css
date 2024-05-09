@@ -1,0 +1,89 @@
+.select-box {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    border: 1px solid rgba(238,238,238,1);
+    border-radius: 6px;
+    padding: 8px 16px;
+    width: 168px;
+
+    background-color: rgba(255,255,255,1);
+}
+
+.select-item {
+    flex-grow: 1;
+    
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+
+    color: rgba(64,64,64,1);
+}
+
+.select-none {
+    flex-grow: 1;
+    
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+
+    color: rgba(138,146,166,1);
+}
+
+.select-open-button {
+    width: 24px;
+    height: 24px;
+
+    background-image: url('../../assets/image/arrow-drop-down-icon.png');
+    background-size: 100% 100%;
+
+    cursor: pointer;
+}
+
+.select-close-button {
+    width: 24px;
+    height: 24px;
+
+    background-image: url('../../assets/image/arrow-drop-up-icon.png');
+    background-size: 100% 100%;
+
+    cursor: pointer;
+}
+
+.select-list {
+    position: absolute;
+    left: -1px;
+    top: 44px;
+
+    display: inline-block;
+
+    max-height: 144px;
+    overflow-y: scroll;
+
+    background-color: rgba(255,255,255,1);
+
+    -ms-overflow-style: none;
+}
+
+.select-list::-webkit-scrollbar {
+    display: none;
+}
+
+.select-list-item-box {
+    display: flex;
+
+    border: 1px solid rgba(238,238,238,1);
+    padding: 8px 16px;
+    width: 168px;
+
+    background-color: rgba(255,255,255,1);
+}
+
+.select-list-item-box:hover {
+    background-color: rgba(238,238,238,0.2);
+    cursor: pointer;
+}

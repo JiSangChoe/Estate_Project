@@ -1,18 +1,16 @@
 import React from 'react';
-import './style.css';
+import './style.css'
+import SelectBox from 'src/components/Selectbox';
 
 //                    component                    //
 export default function Local() {
-    
+
     //                    render                    //
-    return  (
+    return (
         <div id='local-wrapper'>
             <div className='local-top'>
                 <div className='local-search-box'>
-                    <div className='select-box'>
-                        <div className='select-selected'></div>
-                        <div className='select-open-button'></div>
-                    </div>
+                    <SelectBox/>
                     <div className='primary-button'>검색</div>
                 </div>
                 <div className='local-origin-text'>데이터 출처: KOSIS</div>
@@ -34,8 +32,7 @@ export default function Local() {
                 <div className='local-card-chart-box'>
                     
                 </div>
-            </div>
-            <div className='local-card'>
+            </div><div className='local-card'>
                 <div className='local-card-title-box'>
                     <div className='local-card-title'>월세 평균</div>
                     <div className='local-card-unit'>(단위: 백만원)</div>
@@ -44,6 +41,6 @@ export default function Local() {
                     
                 </div>
             </div>
-        </div>        
+        </div>
     );
 }
