@@ -66,32 +66,92 @@ export default function Ratio() {
 
     const returnData = {
         labels: ['01', '02', '03','04', '05', '06','07', '08', '09','10', '11', '12'],
-        datasets: [{
-            label: '매매 평균',
+        datasets: [
+            {
+            label: '40 이하',
             data: [225, 224, 224, 224, 200, 211, 225, 224, 224, 224, 200, 211],
             borderColor: 'rgba(58,87,232,1)',
             backgroundColor: 'rgba(58,87,232,1)'
-        }]
+            },
+            {
+            label: '40 초과 60 이하',
+            data: [225, 224, 224, 224, 200, 211, 225, 224, 224, 224, 200, 211],
+            borderColor: 'rgba(0,203,93,1)',
+            backgroundColor: 'rgba(0,203,93,1)'
+            },
+            {
+                label: '60 초과 85 이하',
+            data: [225, 224, 224, 224, 200, 211, 225, 224, 224, 224, 200, 211],
+            borderColor: 'rgba(255,168,0,1)',
+            backgroundColor: 'rgba(255,168,0,1)'
+            },
+            {
+                label: '85 초과',
+            data: [225, 224, 224, 224, 200, 211, 225, 224, 224, 224, 200, 211],
+            borderColor: 'rgba(255,84,64,1)',
+            backgroundColor: 'rgba(255,84,64,1)'
+            }
+    ]
     };
 
 const leaseRatioData = {
         labels: ['01', '02', '03','04', '05', '06','07', '08', '09','10', '11', '12'],
-        datasets: [{
-            label: '전세 평균',
+        datasets: [
+            {
+            label: '40 이하',
             data: [225, 224, 224, 224, 200, 211, 225, 224, 224, 224, 200, 211],
             borderColor: 'rgba(58,87,232,1)',
             backgroundColor: 'rgba(58,87,232,1)'
-        }]
+            },
+            {
+            label: '40 초과 60 이하',
+            data: [225, 224, 224, 224, 200, 211, 225, 224, 224, 224, 200, 211],
+            borderColor: 'rgba(0,203,93,1)',
+            backgroundColor: 'rgba(0,203,93,1)'
+            },
+            {
+                label: '60 초과 85 이하',
+            data: [225, 224, 224, 224, 200, 211, 225, 224, 224, 224, 200, 211],
+            borderColor: 'rgba(255,168,0,1)',
+            backgroundColor: 'rgba(255,168,0,1)'
+            },
+            {
+                label: '85 초과',
+            data: [225, 224, 224, 224, 200, 211, 225, 224, 224, 224, 200, 211],
+            borderColor: 'rgba(255,84,64,1)',
+            backgroundColor: 'rgba(255,84,64,1)'
+            }
+    ]
     };
 
 const monthRentRatioData = {
         labels: ['01', '02', '03','04', '05', '06','07', '08', '09','10', '11', '12'],
-        datasets: [{
-            label: '월세 평균',
+        datasets: [
+            {
+            label: '40 이하',
             data: [225, 224, 224, 224, 200, 211, 225, 224, 224, 224, 200, 211],
             borderColor: 'rgba(58,87,232,1)',
             backgroundColor: 'rgba(58,87,232,1)'
-        }]
+            },
+            {
+            label: '40 초과 60 이하',
+            data: [225, 224, 224, 224, 200, 211, 225, 224, 224, 224, 200, 211],
+            borderColor: 'rgba(0,203,93,1)',
+            backgroundColor: 'rgba(0,203,93,1)'
+            },
+            {
+                label: '60 초과 85 이하',
+            data: [225, 224, 224, 224, 200, 211, 225, 224, 224, 224, 200, 211],
+            borderColor: 'rgba(255,168,0,1)',
+            backgroundColor: 'rgba(255,168,0,1)'
+            },
+            {
+                label: '85 초과',
+            data: [225, 224, 224, 224, 200, 211, 225, 224, 224, 224, 200, 211],
+            borderColor: 'rgba(255,84,64,1)',
+            backgroundColor: 'rgba(255,84,64,1)'
+            }
+    ]
     };
 
     //                    render                    //
