@@ -1,0 +1,17 @@
+#local-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.local-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.local-search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
