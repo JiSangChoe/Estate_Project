@@ -15,3 +15,48 @@
     align-items: center;
     gap: 12px;
 }
+
+.local-origin-text {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 130%;
+
+    color: rgba(138,146,166,1);
+}
+
+.local-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    border: 1px solid rgba(238,238,238,1);
+    border-radius: 8px;
+    padding: 24px;
+    
+    background-color: rgba(255,255,255,1);
+}
+
+.local-card-title-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.local-card-title {
+    font-size: 16px;
+    font-weight: 700;
+
+    color: rgba(64,64,64,1);
+}
+
+.local-card-unit {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 130%;
+
+    color: rgba(64,64,64,1);
+}
+
+.local-card-chart-box {
+    height: 238px;
+}
