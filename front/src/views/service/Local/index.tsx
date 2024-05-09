@@ -1,6 +1,10 @@
 import React from 'react';
 import './style.css'
 
+//                    component                    //
 export default function Local() {
-    return <div>Local</div>;
+
+    //                    render                    //
+    return (
+    )
 }
