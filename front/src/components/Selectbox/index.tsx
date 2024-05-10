@@ -3,36 +3,40 @@ import './style.css';
 
 interface Prop {
     value: string;
-    onChangeValue: (value: string) => void;
+    onChange: (value: string) => void;
 }
 
 //                    component                    //
-export default function SelectBox({ value, onChangeValue }: Prop) {
+export default function SelectBox({ value, onChange }: Prop) {
 
     const listItem = [
-        { name: '전국', value: '전국' },
-        { name: '수도권', value: '수도권' },
-        { name: '지방', value: '지방' },
-        { name: '서울', value: '서울' },
-        { name: '부산', value: '부산' },
-        { name: '대구', value: '대구' },
-        { name: '인천', value: '인천' },
-        { name: '광주', value: '광주' },
-        { name: '대전', value: '대전' },
-        { name: '울산', value: '울산' },
-        { name: '세종', value: '세종' },
-        { name: '경기', value: '경기' },
+        { name: '전국', value: 'NATIONWIDE' },
+        { name: '수도권', value: 'CAPITAL_AREA' },
+        { name: '지방', value: 'LOCAL_AREA' },
+        { name: '서울', value: 'SEOUL' },
+        { name: '부산', value: 'BUSAN' },
+        { name: '대구', value: 'DAEGU' },
+        { name: '인천', value: 'INCHEON' },
+        { name: '광주', value: 'GWANGJU' },
+        { name: '대전', value: 'DAEJEON' },
+        { name: '울산', value: 'ULSAN' },
+        { name: '세종', value: 'SAEJONG' },
+        { name: '경기', value: 'GYEONGGI' },
     ];
 
     //                    state                    //
     const [show, setShow] = useState<boolean>(false);
+    const [name, setName] = useState<string>('');
 
     //                    event handler                    //
     const onButtonClickHandler = () => {
         setShow(!show);
     };
     const onItemClickHandler = (value: string) => {
-        onChangeValue(value);
+        listItem.forEach(item => {
+            if (item.value === value) setName(item.name);
+        })
+        onChange(value);
         setShow(false);
     };
 
@@ -42,7 +46,7 @@ export default function SelectBox({ value, onChangeValue }: Prop) {
         <div className='select-box'>
             { value === '' ? 
             <div className='select-none'>지역</div> :
-            <div className='select-item'>{value}</div>
+            <div className='select-item'>{name}</div>
             }  
             <div className={buttonClass} onClick={onButtonClickHandler}></div>
             {show && 

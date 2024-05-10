@@ -3,8 +3,11 @@
     flex-direction: column;
     gap: 24px;
 
+    position: relative;
+
     margin: 0 auto;
     width: 1182px;
+    min-height: 800px;
 }
 
 .local-top {
@@ -62,4 +65,18 @@
 
 .local-card-chart-box {
     width: 100%;
+}
+
+.local-no-data-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+
+    color: rgba(138,146,166,1);
 }
