@@ -41,8 +41,6 @@ export default function Local() {
     const [monthRent, setMonthRent] = useState<number[]>([]);
 
     //                    function                    //
-    const navigator = useNavigate();
-
     const getLocalDataResponse = (result: GetLocalDataResponseDto | ResponseDto | null) => {
 
         const message = 
@@ -104,12 +102,13 @@ export default function Local() {
         };
 
     //                    render                    //
+    const buttonClass = selectLocal ? 'primary-button' : 'disable-button';
     return (
         <div id='local-wrapper'>
             <div className='local-top'>
                 <div className='local-search-box'>
                     <SelectBox value={selectLocal} onChange={onLocalChangeHandler} />
-                    <div className='primary-button' onClick={onSearchClickHandler}>검색</div>
+                    <div className={buttonClass} onClick={onSearchClickHandler}>검색</div>
                 </div>
                 <div className='local-origin-text'>데이터 출처: KOSIS</div>
             </div>

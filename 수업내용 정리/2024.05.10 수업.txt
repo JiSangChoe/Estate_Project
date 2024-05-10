@@ -1,0 +1,8 @@
+back
+
+GET http://localhost:4000/api/v1/estate/local/BUSAN
+
+USER 토큰
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaGx3bHRrZDEyMyIsImlhdCI6MTcxNTI5OTcyNCwiZXhwIjoxNzE1MzM1NzI0fQ.R4BM--OqTe0R-Cn1l9BX65EgGzlScHN7fqt8sUQzssw
+
+GET http://localhost:4000/api/v1/estate/ratio/BUSAN

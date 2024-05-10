@@ -58,9 +58,9 @@ public class GetRatioDataResponseDto extends ResponseDto{
             this.yearMonth.add(ChangeDateFormatUtil.changeYYMM(originalDate));
 
             this.return40.add(resultSet.getReturn40());
-            this.return40.add(resultSet.getReturn4060());
-            this.return40.add(resultSet.getReturn6085());
-            this.return40.add(resultSet.getReturn85());
+            this.return4060.add(resultSet.getReturn4060());
+            this.return6085.add(resultSet.getReturn6085());
+            this.return85.add(resultSet.getReturn85());
 
             this.leaseRatio40.add(resultSet.getLeaseRatio40());
             this.leaseRatio4060.add(resultSet.getLeaseRatio4060());
