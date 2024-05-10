@@ -159,7 +159,7 @@ const monthRentRatioData = {
         <div id='local-wrapper'>
             <div className='local-top'>
                 <div className='local-search-box'>
-                    <SelectBox value={selectLocal} onChangeValue={onLocalChangeHandler}/>
+                    <SelectBox value={selectLocal} onChange={onLocalChangeHandler}/>
                     <div className='primary-button'>검색</div>
                 </div>
                 <div className='local-origin-text'>데이터 출처: KOSIS</div>
