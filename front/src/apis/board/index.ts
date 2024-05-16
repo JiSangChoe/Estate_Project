@@ -45,7 +45,7 @@ export const getBoardRequest = async (receptionNumber: number | string, accessTo
     return result;
 };
 
-// function: Q&A 게시물 조회수 증가 API 함수
+// function: Q&A 게시물 수정 API 함수
 export const putBoardRequest = async (receptionNumber: number | string, requestBody: PutBoardRequestDto, accessToken: string) => {
     const result = await axios.put(PUT_BOARD_URL(receptionNumber), requestBody, bearerAuthorization(accessToken))
         .then(requestHandler<ResponseDto>)
