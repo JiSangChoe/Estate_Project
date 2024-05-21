@@ -76,6 +76,10 @@ CREATE TABLE board (
     Foreign Key (writer_id) REFERENCES user(user_id)
 );
 
+## 유저정보 불러오기
+select * from mysql.user;
+ select * from mysql.db
+
 ## 개발자 계정 생성
 CREATE USER 'developer'@'%' IDENTIFIED BY 'P!ssw0rd';
 GRANT ALL PRIVILEGES ON estate.* TO 'developer'@'%';
