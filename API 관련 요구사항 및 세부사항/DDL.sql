@@ -41,45 +41,65 @@
 
 
 
-## 데이터베이스 생성
 CREATE DATABASE estate;
 USE estate;
 
-## 이메일 인증 번호 테이블 생성
-CREATE TABLE email_auth_number (
-    email VARCHAR(100) PRIMARY KEY,
-    auth_number VARCHAR(4) NOT NULL
+CREATE TABLE `email_auth_number` (
+  `email` varchar(100) NOT NULL,
+  `auth_number` varchar(4) NOT NULL,
+  PRIMARY KEY (`email`)
 );
 
-## 유저 테이블 생성
-CREATE TABLE user (
-    user_id VARCHAR(50) PRIMARY KEY,
-    user_password VARCHAR(255) NOT NULL,
-    user_email VARCHAR(100) NOT NULL UNIQUE,
-    user_role VARCHAR(15) NOT NULL DEFAULT('ROLE_USER')CHECK (user_role IN('ROLE_USER', 'ROLE_ADMIN')),
-    join_path VARCHAR(5) NOT NULL DEFAULT('HOME') CHECK(join_path IN('HOME', 'KAKAO', 'NAVER')),
-    CONSTRAINT user_email_fk
-    FOREIGN KEY (user_email) REFERENCES email_auth_number(email)
+CREATE TABLE `user` (
+  `user_id` varchar(50) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
+  `user_email` varchar(100) NOT NULL,
+  `user_role` varchar(15) NOT NULL DEFAULT (_utf8mb4'ROLE_USER'),
+  `join_path` varchar(5) NOT NULL DEFAULT (_utf8mb4'HOME'),
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_email` (`user_email`),
+  CONSTRAINT `user_email_fk` FOREIGN KEY (`user_email`) REFERENCES `email_auth_number` (`email`),
+  CONSTRAINT `user_chk_1` CHECK ((`user_role` in (_utf8mb4'ROLE_USER',_utf8mb4'ROLE_ADMIN'))),
+  CONSTRAINT `user_chk_2` CHECK ((`join_path` in (_utf8mb4'HOME',_utf8mb4'KAKAO',_utf8mb4'NAVER')))
 );
 
-## Q&A 게시물 테이블 생성
-CREATE TABLE board (
-    reception_number INT PRIMARY KEY AUTO_INCREMENT,
-    status BOOLEAN NOT NULL DEFAULT(false),
-    title VARCHAR(100) NOT NULL,
-    contents TEXT NOT NULL,
-    writer_id VARCHAR(50) NOT NULL,
-    write_datetime DATETIME NOT NULL DEFAULT(now()),
-    view_count INT NOT NULL DEFAULT(0),
-    comment TEXT,
-    CONSTRAINT write_id_fk
-    Foreign Key (writer_id) REFERENCES user(user_id)
+CREATE TABLE `estate` (
+  `sequence` int DEFAULT NULL,
+  `local` text,
+  `year_month` datetime DEFAULT NULL,
+  `sale` int DEFAULT NULL,
+  `lease` int DEFAULT NULL,
+  `month_rent` int DEFAULT NULL,
+  `month_rent_fee` int DEFAULT NULL,
+  `return40` double DEFAULT NULL,
+  `return4060` double DEFAULT NULL,
+  `return6085` double DEFAULT NULL,
+  `return85` double DEFAULT NULL,
+  `lease_ratio40` double DEFAULT NULL,
+  `lease_ratio4060` double DEFAULT NULL,
+  `lease_ratio6085` double DEFAULT NULL,
+  `lease_ratio85` double DEFAULT NULL,
+  `month_rent_ratio40` double DEFAULT NULL,
+  `month_rent_ratio4060` double DEFAULT NULL,
+  `month_rent_ratio6085` double DEFAULT NULL,
+  `month_rent_ratio85` double DEFAULT NULL
 );
 
-## 유저정보 불러오기
-select * from mysql.user;
- select * from mysql.db
+CREATE TABLE `board` (
+  `reception_number` int NOT NULL AUTO_INCREMENT,
+  `status` tinyint(1) NOT NULL DEFAULT (false),
+  `title` varchar(100) NOT NULL,
+  `contents` text NOT NULL,
+  `writer_id` varchar(50) NOT NULL,
+  `write_datetime` datetime NOT NULL DEFAULT (now()),
+  `view_count` int NOT NULL DEFAULT (0),
+  `comment` text,
+  PRIMARY KEY (`reception_number`),
+  KEY `writer_id_fk` (`writer_id`),
+  CONSTRAINT `writer_id_fk` FOREIGN KEY (`writer_id`) REFERENCES `user` (`user_id`)
+);
 
 ## 개발자 계정 생성
 CREATE USER 'developer'@'%' IDENTIFIED BY 'P!ssw0rd';
 GRANT ALL PRIVILEGES ON estate.* TO 'developer'@'%';
+
